@@ -2,6 +2,7 @@ package exercicioFuncionariosListPorID;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 /* v n 96
@@ -16,6 +17,7 @@ Um salário só pode ser aumentado com base em uma operação de aumento por por
 public class Main {
 	public static void main(String[] args)  {
 		
+	  //Locale.setDefault(Locale.US);
 		Scanner leia = new Scanner(System.in);
 		Integer idd=0;
 		
@@ -54,9 +56,11 @@ public class Main {
 			System.out.println("Digite o ID do seu funcionario para beneficiar para um aumento de salario!.");
 			int id = leia.nextInt();
 			
+			//Integer benefic = temID.(listaDeEmpregados , id);
+			
 			// pega o objeto funcionario pelo ID! usando o filter usando um lambda e pego o primeiro que venha na lista findFirst() se nao volta Null
 			Empregado beneficio = listaDeEmpregados.stream().filter(empregadoX -> empregadoX.getId() == id).findFirst().orElse(null); 
-			
+																		// ->tal qual
 			
 			
 			if(beneficio != null) {
@@ -66,6 +70,8 @@ public class Main {
 				beneficio.aumento(porcento);
 				
 				System.out.println("Lista de funcionarios");
+				
+				//listaDeEmpregados.get(benefic).aumento(porcento);
 				
 			}else {System.out.println("Não temos nenhum funcionario com esse ID!");}
 						
@@ -88,6 +94,19 @@ public class Main {
 		Empregado empregadoiD = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
 		
 		return empregadoiD != null; // SE TIVER algum retorno é porque temos já um id.
+	}
+	
+	
+	
+	//OUTRA maneira de achar um objeto por um id específico na lista. return i, retorna  o objeto que tem esse id. ELSE retorna Nulo.
+	public static Integer temID(List<Empregado>lista,int id) {
+		for(int i=0;i< lista.size(); i++) {
+			if(lista.get(i).getId() == id) {
+				return i;
+			}
+		}
+		
+		return null;
 	}
 	
 	

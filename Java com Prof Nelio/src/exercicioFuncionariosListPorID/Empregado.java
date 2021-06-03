@@ -40,6 +40,8 @@ public class Empregado {
 			this.salario += salario * percentage / 100.0;
 		}
 	//formata a saida dos meus objetos!
+	
+	@Override
 	public String toString() {
 		return "ID: "+ this.id + ", Nome: " + this.nome + ", Salario: " + String.format("%.2f", this.salario);
 	}
