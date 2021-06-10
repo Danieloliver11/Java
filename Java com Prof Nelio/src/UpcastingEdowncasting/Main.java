@@ -3,6 +3,22 @@ package UpcastingEdowncasting;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		/*
+Upcasting: Quando queremos converter uma classe Sub para Super class, usamos Upcasting (ou ampliação). 
+Isso acontece automaticamente, sem necessidade de fazer nada explicitamente. 
+
+Downcasting: Quando queremos lançar uma classe Super para Sub, usamos Downcasting (ou estreitamento),
+ e Downcasting não é diretamente possível em Java, explicitamente temos que fazer.*/
+		
+		
+		
+		/*•
+		 *  Upcasting
+• Casting da subclasse para superclasse
+• Uso comum: polimorfismo
+
+*/
 
 		Account acc = new Account(1001, "Alex", 0.0);
 		BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0.0, 500.0);
@@ -15,6 +31,14 @@ public class Main {
 		
 		// DOWNCASTING
 		
+		
+		/*
+		 * 
+		 * • Downcasting
+• Casting da superclasse para subclasse
+
+*/
+		
 		BusinessAccount acc4 = (BusinessAccount)acc2;
 		acc4.loan(100.0);
 		
@@ -22,6 +46,7 @@ public class Main {
 		if (acc3 instanceof BusinessAccount) {
 			BusinessAccount acc5 = (BusinessAccount)acc3;
 			acc5.loan(200.0);
+			acc5.withdraw(0); // metodo de account 
 			System.out.println("Loan!");
 		}
 		
