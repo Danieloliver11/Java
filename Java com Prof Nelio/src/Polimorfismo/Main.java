@@ -31,10 +31,23 @@ Withdraw está sendo feita (ele só sabe que são duas variáveis tipo Account):
 		x.withdraw(50.0);
 		y.withdraw(50.0);
 		
-		System.out.println(x.getBalance()); // 945.0
+		System.out.println(x.getBalance()); // 945.0 POLIMORFISMO DO METODO withdraw de Acoount  
+			/*
+			 public void withdraw(double amount) {
+				balance -= amount + 5;
+	}
+	*/
 
 		
-		System.out.println(y.getBalance());// 950.0
+		System.out.println(y.getBalance());// 950.0 POLIMORFISMO DO METODO withdraw de SavingsAccount
+		
+		/*
+		 @Override
+	public void withdraw(double amount) {
+		balance -= amount;
+	}
+	
+	*/
 
 
 	
