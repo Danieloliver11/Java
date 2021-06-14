@@ -28,6 +28,8 @@ Withdraw está sendo feita (ele só sabe que são duas variáveis tipo Account):
 		
 		Account x = new Account(1020, "Alex", 1000.0);
 		Account y = new SavingsAccount(1023, "Maria", 1000.0, 0.01);
+		// Mesmo metodo com o mesmo nome, polimorfismo!
+		
 		x.withdraw(50.0);
 		y.withdraw(50.0);
 		
