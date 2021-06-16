@@ -8,9 +8,9 @@ public class Conta {
 	private Double saldo;
 	private Double saqueLimite;
 	
-	public Conta(Integer numero, String order, Double saldo, Double saqueLimite, Double saquee) throws DomainException {
+	public Conta(Integer numero, String order, Double saldo, Double saqueLimite)  {
 		super();
-		this.saque(saquee);
+		
 		this.numero = numero;
 		this.order = order;
 		this.saldo = saldo;
@@ -53,18 +53,25 @@ public class Conta {
 		this.saldo += conta; 
 	}
 	
-	public void saque (Double saque) throws DomainException {
+	// throws DomainException  propaga a excecao para o meu programa principal tratar{
+	public void saque(Double saque) throws DomainException  {
+		
+		validSaque(saque); // a informacao ira fazer a avaliacao. se der Exception o throw já retorna a Exception.
+		
+		this.saldo -= saque;
+	}
+	
+	// metodo para validar uma excecao
+	public void validSaque (Double saque) throws DomainException {
 		
 		if(this.saqueLimite > this.saldo) {
 			// erro saldo menor que o saquelimite!
 			throw new DomainException("Saldo menor que o saque limite!");
 		}
-		else if(this.saqueLimite < saque) {
+		 if(this.saqueLimite < saque) {
 			throw new DomainException("O saque não pode ser maior que o limite de saque!");
-		}else {
-			this.saldo -= saque;
-			
-		}
+		
 	}
+		}
 
 }

@@ -14,32 +14,33 @@ public class Main {
 	 */
 
 	public static void main(String[] args) throws DomainException {
+		
+		Scanner leia = new Scanner(System.in);
 
+		System.out.println("Entre com o numero da conta");
+		int numero = leia.nextInt();
+
+		System.out.println("Nome:");
+		String nome = leia.next();
+
+		System.out.println("Saldo inicial");
+		double saldo = leia.nextDouble();
+
+		System.out.println("Qual é o saque limite");
+		double saqueLi = leia.nextDouble();
+
+		System.out.println("Digite seu saque!");
+		double saquee = leia.nextDouble();
+
+		Conta conta = new Conta(numero, nome, saldo, saqueLi);
+
+	
+		//coloca a chamada que pode ter uma excecao!
 		try {
-			Scanner leia = new Scanner(System.in);
-
-			System.out.println("Entre com o numero da conta");
-			int numero = leia.nextInt();
-
-			System.out.println("Nome:");
-			String nome = leia.next();
-
-			System.out.println("Saldo inicial");
-			double saldo = leia.nextDouble();
-
-			System.out.println("Qual é o saque limite");
-			double saqueLi = leia.nextDouble();
-
-			System.out.println("Digite seu saque!");
-			double saquee = leia.nextDouble();
-
-			Conta conta = new Conta(numero, nome, saldo, saqueLi);
-
 			conta.saque(saquee);
-
 			System.out.println("Seu saldo é : " + conta.getSaldo());
 
-		} catch (Exception e) {
+		} catch (DomainException e) {											//blogo do tratamento de excecao. no nosso casa é uma streng que vai retornar 
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 
