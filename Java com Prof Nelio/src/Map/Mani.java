@@ -24,7 +24,8 @@ public class Mani {
 		Alguns métodos importantes
 		
 		
-		• put(key, value), remove(key), containsKey(key), get(key)
+		• put(key, value), remove(key), containsKey(key), 
+			get(key) pega o valor que esta com a key referente
 		• Baseado em equals e hashCode
 		• Se equals e hashCode não existir, é usada comparação de ponteiros
 		
@@ -54,7 +55,7 @@ public class Mani {
 		System.out.println("ALL COOKIES:"); 
 		
 		System.out.println("--------------");
-		for (String key : cookies.keySet()) { // keySet pega as chaves da lsita
+		for (String key : cookies.keySet()) { // keySet pega as chaves da lista
 		System.out.println(key + ": " + cookies.get(key)); // pega o valor de cada key e printa 
 
 	}
