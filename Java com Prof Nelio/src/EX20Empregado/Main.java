@@ -10,6 +10,14 @@ import java.util.stream.Collectors;
 
 public class Main {
 	/*
+	 * 
+	 * Tv,900.00
+		Mouse,50.00
+		Tablet,350.50
+		HD Case,80.90
+		Computer,850.00
+		Monitor,290.00
+
 	Fazer um programa para ler os dados (nome, email e salário) de funcionários a partir de um arquivo em formato .csv.
 	Em seguida mostrar, em ordem alfabética, o email dos funcionários cujo salário seja superior a um dado valor fornecido pelo usuário.
 	Mostrar também a soma dos salários dos funcionários cujo nome começa com a letra 'M'.
@@ -57,6 +65,18 @@ public class Main {
 		Double sunM =  funcionarios.stream().filter( x ->  x.getNome().toUpperCase().charAt(0) == 'M').map(x -> x.getPreco()).reduce(0.0, (x, y) -> x + y);
 		
 		System.out.println(sunM);
+		
+		
+		/*
+		 * 
+		 * 
+		 * Entre com salario desejado:
+			2000,00
+			anna@gmail.com
+			bob@gmail.com
+			maria@gmail.com
+			4900.0
+		 */
 		
 	
 		
